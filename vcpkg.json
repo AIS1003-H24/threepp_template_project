@@ -1,4 +1,9 @@
 
 {
-  "dependencies": []
+  "dependencies": [
+    {
+      "name": "glfw3",
+      "platform": "!wasm32"
+    }
+  ]
 }

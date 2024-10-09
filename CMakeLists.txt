@@ -7,6 +7,7 @@ include(FetchContent)
 
 set(THREEPP_BUILD_TESTS OFF)
 set(THREEPP_BUILD_EXAMPLES OFF)
+set(THREEPP_USE_EXTERNAL_GLFW ON)
 FetchContent_Declare(
         threepp
         GIT_REPOSITORY https://github.com/markaren/threepp.git
@@ -14,10 +15,13 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(threepp)
 
+find_package(glfw3 CONFIG REQUIRED)
+add_library(glfw::glfw ALIAS glfw)
+
 add_subdirectory(external)
 
 add_executable(threepp_demo main.cpp)
-target_link_libraries(threepp_demo PRIVATE threepp::threepp imgui::imgui)
+target_link_libraries(threepp_demo PRIVATE threepp::threepp imgui::imgui glfw)
 
 
 ######### Emscripten #######
