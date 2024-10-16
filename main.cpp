@@ -44,7 +44,12 @@ int main() {
     });
     // ui.makeDpiAware(); // to increase imgui size on high DPI screens
 
+    Clock clock;
+    float rotationSpeed = 0.5f;
     canvas.animate([&] {
+        const auto dt = clock.getDelta();
+
+        mesh->rotation.y += rotationSpeed * dt;
 
         renderer.render(scene, camera);
         ui.render();
