@@ -25,6 +25,7 @@ target_link_libraries(threepp_demo PRIVATE threepp::threepp imgui::imgui glfw)
 
 
 ######### Emscripten #######
+# This part is only needed if you want to compile to a WEB application
 if (DEFINED EMSCRIPTEN)
 
     set(LINK_FLAGS " --bind -sUSE_GLFW=3 -sGL_DEBUG=1 -sMIN_WEBGL_VERSION=2 -sMAX_WEBGL_VERSION=2 \
