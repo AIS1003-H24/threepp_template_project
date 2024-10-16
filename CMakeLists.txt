@@ -11,7 +11,7 @@ set(THREEPP_USE_EXTERNAL_GLFW ON)
 FetchContent_Declare(
         threepp
         GIT_REPOSITORY https://github.com/markaren/threepp.git
-        GIT_TAG 947a7f34ff3b931d30ed777303bafaeaef84e029
+        GIT_TAG 2e2397e0b7f0e639f254ea3046b70e53a71f0387
 )
 FetchContent_MakeAvailable(threepp)
 
